@@ -12,5 +12,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         System.out.println("MORO M8 MITEN MENEE!=!=!=");
+        System.out.println("Laymayo xdd");
     }
 }
