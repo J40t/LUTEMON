@@ -20,4 +20,17 @@ public class Storage {
         return storage;
     }
 
+    public void addLutemon(Lutemon lutemon) {
+
+    }
+
+    public Lutemon getLutemon(Lutemon lutemon) {
+
+        return lutemon;
+    }
+
+    public void listLutemons() {
+
+    }
+
 }
