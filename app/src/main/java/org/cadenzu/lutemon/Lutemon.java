@@ -26,7 +26,19 @@ public class Lutemon {
         this.idCounter = idCounter;
     }
 
+    public void attack(int attack) {
 
+    }
+
+    //Defend against the opposing "Lutemon lutemon"
+    public void defense(Lutemon lutemon) {
+
+    }
+
+    public int getNumberOfCreatedLutemons(int idCounter) {
+
+        return idCounter;
+    }
 
 
 
