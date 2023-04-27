@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView"
+            android:id="@+id/fragContainer"
             android:name="org.cadenzu.lutemon.HomeFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
