@@ -1,7 +1,5 @@
 package org.cadenzu.lutemon.lutemon;
 
-import org.cadenzu.lutemon.lutemon.Lutemon;
-
 public class Green extends Lutemon {
 
     public Green(String name, String color,
