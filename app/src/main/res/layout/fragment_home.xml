@@ -121,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:shadowColor="#657A47"
                 android:shadowRadius="50"
-                android:text="Currently here:"
+                android:text="Lutemon currently here:"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp" />
 
