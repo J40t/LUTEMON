@@ -1,4 +1,6 @@
-package org.cadenzu.lutemon;
+package org.cadenzu.lutemon.lutemon;
+
+import org.cadenzu.lutemon.lutemon.Lutemon;
 
 public class Orange extends Lutemon {
 
@@ -6,6 +8,6 @@ public class Orange extends Lutemon {
                  int attack, int defense, int exp,
                  int health, int maxHealth,
                  int id, int idCounter) {
-        super(name, color, attack, defense, exp, health, maxHealth, id, idCounter);
+        super(name, "Orange", 8, 1, exp, health, 17, id, idCounter);
     }
 }

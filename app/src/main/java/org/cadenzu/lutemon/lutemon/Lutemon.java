@@ -1,4 +1,4 @@
-package org.cadenzu.lutemon;
+package org.cadenzu.lutemon.lutemon;
 
 public class Lutemon {
     protected String name;
@@ -20,7 +20,7 @@ public class Lutemon {
         this.attack = attack;
         this.defense = defense;
         this.exp = exp;
-        this.health = health;
+        this.health = maxHealth; // The Lutemon has max health when created.
         this.maxHealth = maxHealth;
         this.id = id;
         this.idCounter = idCounter;
