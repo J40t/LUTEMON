@@ -9,4 +9,5 @@ public class Home extends Storage {
     public Home(String name, ArrayList<Lutemon> lutemons) {
         super("Home", lutemons);
     }
+
 }

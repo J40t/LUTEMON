@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction()
                         .replace(R.id.fragContainer, HomeFragment.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("back")
                         .commit();
             }
         });
@@ -35,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction()
                         .replace(R.id.fragContainer, TrainingFragment.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("back")
                         .commit();
             }
         });
@@ -47,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction()
                         .replace(R.id.fragContainer, DuelFragment.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("back")
                         .commit();
             }
         });
