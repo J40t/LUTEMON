@@ -14,7 +14,7 @@ public class Lutemon {
     public Lutemon(String name, String color,
                    int attack, int defense, int exp,
                    int health, int maxHealth,
-                   int id, int idCounter) {
+                   int id) {
         this.name = name;
         this.color = color;
         this.attack = attack;
@@ -23,7 +23,7 @@ public class Lutemon {
         this.health = maxHealth; // The Lutemon has max health when created.
         this.maxHealth = maxHealth;
         this.id = id;
-        this.idCounter = idCounter;
+        this.idCounter = idCounter++;
     }
 
     public void attack(int attack) {

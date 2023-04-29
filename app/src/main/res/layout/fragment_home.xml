@@ -38,6 +38,7 @@
                 android:textSize="20dp" />
 
             <RadioGroup
+                android:id="@+id/rgLutemonType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

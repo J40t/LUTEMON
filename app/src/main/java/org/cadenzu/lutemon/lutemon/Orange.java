@@ -2,10 +2,8 @@ package org.cadenzu.lutemon.lutemon;
 
 public class Orange extends Lutemon {
 
-    public Orange(String name, String color,
-                 int attack, int defense, int exp,
-                 int health, int maxHealth,
-                 int id, int idCounter) {
-        super(name, "Orange", 8, 1, exp, health, 17, id, idCounter);
+    public Orange(String name) {
+        super(name, "Orange", 8, 1, 0, 17, 17, 0);
+        id = getIdCounter();
     }
 }

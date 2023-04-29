@@ -5,17 +5,19 @@ import org.cadenzu.lutemon.lutemon.Lutemon;
 import java.util.ArrayList;
 
 public class Storage {
-    protected String name;
-    protected ArrayList<Lutemon> lutemons;
+    protected static String name;
+    protected static ArrayList<Lutemon> lutemons;
+
+    public static Storage storage = null;
 
     public Storage(String name, ArrayList<Lutemon> lutemons) {
         this.name = name;
         this.lutemons = lutemons;
     }
 
-    public static Storage storage = null;
 
-    public Storage getInstance() {
+
+    public static Storage getInstance() {
         if (storage == null) {
             storage = new Storage(name, lutemons);
         }
