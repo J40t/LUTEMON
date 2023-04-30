@@ -47,19 +47,19 @@ public class HomeFragment extends Fragment {
         String name = txtName.getText().toString();
         switch (rgLutemonType.getCheckedRadioButtonId()) {
             case R.id.rbWhite:
-                Storage.getInstance().addLutemon(new White(name));
+                Home.getInstance().addLutemon(new White(name));
                 break;
             case R.id.rbGreen:
-                Storage.getInstance().addLutemon(new Green(name));
+                Home.getInstance().addLutemon(new Green(name));
                 break;
             case R.id.rbPink:
-                Storage.getInstance().addLutemon(new Pink(name));
+                Home.getInstance().addLutemon(new Pink(name));
                 break;
             case R.id.rbOrange:
-                Storage.getInstance().addLutemon(new Orange(name));
+                Home.getInstance().addLutemon(new Orange(name));
                 break;
             case R.id.rbBlack:
-                Storage.getInstance().addLutemon(new Black(name));
+                Home.getInstance().addLutemon(new Black(name));
                 break;
         }
     }
