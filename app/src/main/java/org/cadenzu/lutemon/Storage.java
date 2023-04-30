@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Storage {
     protected static String name;
-    protected static ArrayList<Lutemon> lutemons;
+    protected static ArrayList<Lutemon> lutemons = new ArrayList<>();
 
     public static Storage storage = null;
 
@@ -25,7 +25,18 @@ public class Storage {
     }
 
     public void addLutemon(Lutemon lutemon) {
+        lutemons.add(lutemon);
+        System.out.println("Added a lutemon with the following information:");
+        System.out.println("Name: " + lutemon.getName());
+        System.out.println("Color: " + lutemon.getColor());
+        System.out.println("Attack: " + lutemon.getAttack());
+        System.out.println("Defense: " + lutemon.getDefense());
+        System.out.println("Exp: " + lutemon.getExp());
+        System.out.println("Health: " + lutemon.getHealth());
+        System.out.println("Max Health: " + lutemon.getMaxHealth());
+        System.out.println("Id: " + lutemon.getId());
 
+        listLutemons();
     }
 
     public Lutemon getLutemon(Lutemon lutemon) {
@@ -34,7 +45,10 @@ public class Storage {
     }
 
     public void listLutemons() {
-
+        System.out.println("Following lutemons exist:");
+        for (Lutemon lutemon : lutemons) {
+            System.out.println(lutemon.getName() + ", " + lutemon.getColor());
+        }
     }
 
 }

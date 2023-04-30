@@ -22,7 +22,7 @@ public class Lutemon {
         this.exp = exp;
         this.health = maxHealth; // The Lutemon has max health when created.
         this.maxHealth = maxHealth;
-        this.id = id;
+        this.id = idCounter;
         this.idCounter = idCounter++;
     }
 
