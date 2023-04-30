@@ -29,9 +29,14 @@ public abstract class Storage {
 
     }
 
-    public Lutemon getLutemon(Lutemon lutemon) {
+    public Lutemon getLutemon(int idRequired) {
 
-        return lutemon;
+        for (Lutemon lutemon : lutemons) {
+            if (lutemon.getId() == idRequired) {
+                return lutemon;
+            }
+        }
+        return null;
     }
 
     public void listLutemons() {
@@ -41,4 +46,7 @@ public abstract class Storage {
         }
     }
 
+    public ArrayList<Lutemon> getLutemons() {
+        return lutemons;
+    }
 }

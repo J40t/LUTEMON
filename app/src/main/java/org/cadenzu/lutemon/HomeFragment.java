@@ -1,8 +1,12 @@
 package org.cadenzu.lutemon;
 
+import static org.cadenzu.lutemon.Home.home;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +26,7 @@ public class HomeFragment extends Fragment {
     private Button btnCreate;
     private EditText txtName;
     private RadioGroup rgLutemonType;
+    private RecyclerView rvLutemons;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,14 +35,16 @@ public class HomeFragment extends Fragment {
         btnCreate = view.findViewById(R.id.btnAddLutemon);
         txtName = view.findViewById(R.id.txtInputName);
         rgLutemonType = view.findViewById(R.id.rgLutemonType);
+        rvLutemons = view.findViewById(R.id.rvLutemons);
+        rvLutemons.setLayoutManager(new LinearLayoutManager(getActivity()));
+        rvLutemons.setAdapter(new LutemonViewAdapter(getActivity(), Home.getInstance().getLutemons()));
 
-        btnCreate.setOnClickListener(new View.OnClickListener() {
+        btnCreate.setOnClickListener(new View.OnClickListener() { // Activates on the "CREATE" button
             @Override
             public void onClick(View view) {
                 addLutemon(view);
             }
         });
-
         return view;
     }
 

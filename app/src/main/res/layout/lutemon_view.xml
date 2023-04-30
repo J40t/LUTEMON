@@ -3,6 +3,7 @@
     android:id="@+id/frLutemonStats"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="5dp"
     android:background="#B48CEC">
 
     <LinearLayout
@@ -63,7 +64,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="62dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
@@ -73,7 +74,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Max Health"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp" />
 
                 <TextView
                     android:id="@+id/txtMaxHealthInt"
@@ -87,7 +89,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="69dp"
+                android:layout_width="47dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
@@ -97,7 +99,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Attack"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp" />
 
                 <TextView
                     android:id="@+id/txtAttackInt"
@@ -105,7 +108,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="int"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -120,7 +124,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Defense"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp" />
 
                 <TextView
                     android:id="@+id/txtDefenseInt"
