@@ -6,17 +6,16 @@ import java.util.ArrayList;
 
 public class Home extends Storage {
 
-    ArrayList<Lutemon> lutemonsHome = new ArrayList<>();
+    public static Home home = null;
 
-    public Home(String name, ArrayList<Lutemon> lutemons) {
-        super("Home", lutemons);
+    public Home() {
 
     }
 
-    public static Home home = null;
-    public static Storage getInstance() {
+
+    public static Home getInstance() {
         if (home == null) {
-            home = new Home(name, lutemons);
+            home = new Home();
         }
         return home;
     }

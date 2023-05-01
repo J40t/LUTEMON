@@ -5,15 +5,8 @@ import org.cadenzu.lutemon.lutemon.Lutemon;
 import java.util.ArrayList;
 
 public abstract class Storage {
-    protected static String name;
-    protected static ArrayList<Lutemon> lutemons = new ArrayList<>();
-
-    public static Storage storage = null;
-
-    public Storage(String name, ArrayList<Lutemon> lutemons) {
-        this.name = name;
-        this.lutemons = lutemons;
-    }
+    protected String name;
+    protected ArrayList<Lutemon> lutemons = new ArrayList<>();
 
     public void addLutemon(Lutemon lutemon) {
         lutemons.add(lutemon);
