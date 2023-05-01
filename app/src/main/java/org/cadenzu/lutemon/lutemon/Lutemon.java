@@ -9,7 +9,7 @@ public class Lutemon {
     protected int health;
     protected int maxHealth;
     protected int id;
-    private static int idCounter;
+    private static int idCounter = 0;
 
     public Lutemon(String name, String color,
                    int attack, int defense, int exp,
@@ -22,7 +22,7 @@ public class Lutemon {
         this.exp = exp;
         this.health = maxHealth; // The Lutemon has max health when created.
         this.maxHealth = maxHealth;
-        this.id = getNewId(); // id gets incremented by one each time a new object is created.
+        this.id = getNewId(); // id gets incremented by one after a new object is created.
         this.idCounter = idCounter; // keeps count on how many ids have been created.
     }
 
@@ -35,14 +35,9 @@ public class Lutemon {
 
     }
 
-    public int getNumberOfCreatedLutemons(int idCounter) {
-
-        return idCounter;
-    }
-
     public int getNewId() {
-        idCounter++;
         int newId = idCounter;
+        idCounter++;
         return newId;
 
     }
