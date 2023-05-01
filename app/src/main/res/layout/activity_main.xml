@@ -17,9 +17,15 @@
             android:id="@+id/fragContainer"
             android:name="org.cadenzu.lutemon.HomeFragment"
             android:layout_width="match_parent"
-            android:layout_height="656dp" />
+            android:layout_height="match_parent" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnMoveLutemon"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:text="Move a Lutemon" />
 
     <LinearLayout
         android:layout_width="match_parent"
