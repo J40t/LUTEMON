@@ -3,6 +3,7 @@ package org.cadenzu.lutemon;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnHome = findViewById(R.id.btnHome);
         Button btnTraining = findViewById(R.id.btnTrain);
         Button btnDuel = findViewById(R.id.btnDuel);
+        Button btnMoveLutemon = findViewById(R.id.btnMoveLutemon);
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,5 +52,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnMoveLutemon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openMoveLutemonActivity();
+            }
+        });
+
     }
+    public void openMoveLutemonActivity() {
+        Intent intent = new Intent(this, MoveLutemonActivity.class);
+        startActivity(intent);
+    }
+
+
 }
