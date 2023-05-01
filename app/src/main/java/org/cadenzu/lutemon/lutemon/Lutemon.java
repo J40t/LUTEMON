@@ -6,13 +6,15 @@ public class Lutemon {
     protected int attack;
     protected int defense;
     protected int exp;
+
+    protected int expRoof;
     protected int health;
     protected int maxHealth;
     protected int id;
     private static int idCounter = 0;
 
     public Lutemon(String name, String color,
-                   int attack, int defense, int exp,
+                   int attack, int defense, int exp, int expRoof,
                    int health, int maxHealth,
                    int id) {
         this.name = name;
@@ -20,6 +22,7 @@ public class Lutemon {
         this.attack = attack;
         this.defense = defense;
         this.exp = exp;
+        this.expRoof = expRoof;
         this.health = maxHealth; // The Lutemon has max health when created.
         this.maxHealth = maxHealth;
         this.id = getNewId(); // id gets incremented by one after a new object is created.
@@ -33,6 +36,18 @@ public class Lutemon {
     //Defend against the opposing "Lutemon lutemon"
     public void defense(Lutemon lutemon) {
 
+    }
+
+    public void incrementExperience() {
+        exp++;
+        if (exp > expRoof) {
+            incrementStatAttack();
+            exp = 0;
+        }
+    }
+
+    public void incrementStatAttack() {
+        attack++;
     }
 
     public int getNewId() {

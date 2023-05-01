@@ -27,6 +27,14 @@ public class TrainingFragment extends Fragment {
         rvLutemons.setAdapter(new LutemonViewAdapter(getActivity(), TrainField.getInstance().getLutemons()));
 
 
+        btnTrainEm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TrainField.getInstance().increaseExperienceTraining();
+            }
+        });
+
+
         return view;
     }
 }
