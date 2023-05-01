@@ -9,6 +9,11 @@ public class DuelArena extends Storage {
     ArrayList<Lutemon> lutemonsDualArena = new ArrayList<>();
 
     public static DuelArena duelArena = null;
+
+    public DuelArena() {
+
+    }
+
     public static Storage getInstance() {
         if (duelArena == null) {
             duelArena = new DuelArena();

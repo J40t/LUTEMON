@@ -9,6 +9,10 @@ public class TrainField extends Storage {
     ArrayList<Lutemon> lutemonsTrainField = new ArrayList<>();
 
     public static TrainField trainField = null;
+
+    public TrainField() {
+
+    }
     public static Storage getInstance() {
         if (trainField == null) {
             trainField = new TrainField();

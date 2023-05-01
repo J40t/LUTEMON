@@ -3,64 +3,99 @@ package org.cadenzu.lutemon;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import org.cadenzu.lutemon.lutemon.Lutemon;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MoveLutemonActivity extends AppCompatActivity {
 
-    private RadioGroup rgLutemonSelectHome;
-    private RadioGroup rgLutemonSelectTrain;
-    private RadioGroup rgLutemonSelectDuel;
+    private RadioGroup rgLutemonSelectMove;
+    private RadioGroup rgLocationSelect;
+    private Button btnConfirmMove;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_move_lutemon);
 
-        rgLutemonSelectHome = findViewById(R.id.rgLutemonSelectHome);
-        rgLutemonSelectTrain = findViewById(R.id.rgLutemonSelectTrain);
-        rgLutemonSelectDuel = findViewById(R.id.rgLutemonSelectDuel);
+        rgLutemonSelectMove = findViewById(R.id.rgLutemonSelectMove);
+        btnConfirmMove = findViewById((R.id.btnConfirmMove));
+        rgLocationSelect = findViewById(R.id.rgLocations);
 
-        dynamicRadioButtons();
+        createDynamicCheckBoxes();
+
+        btnConfirmMove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveLutemons(view);
+            }
+        });
     }
 
-    public void dynamicRadioButtons() {
-        // HOME
-        ArrayList<Lutemon> lutemonsHome = Home.getInstance().getLutemons();
-        RadioButton rbHome;
+    public void createDynamicCheckBoxes() {
+
+        //Adding all lutemons to the same ArrayList (There's no "shared" ArrayList in storage class so this is a way to put every lutemon together)
+        ArrayList<Lutemon> allLutemons = new ArrayList<>();
+        allLutemons.addAll(Home.getInstance().getLutemons());
+        allLutemons.addAll(TrainField.getInstance().getLutemons());
+        allLutemons.addAll(DuelArena.getInstance().getLutemons());
+
+        //Dynamically made CheckBoxes' ID is always 0 ... i
+        CheckBox cbLutemonSelect;
         int i = 0;
-        for (Lutemon lutemon : lutemonsHome) {
-            rbHome = new RadioButton(this);
-            rbHome.setText(lutemon.getName());
-            rbHome.setId(i++);
-            rgLutemonSelectHome.addView(rbHome);
-        }
-
-        ArrayList<Lutemon> lutemonsTrain = TrainField.getInstance().getLutemons();
-        RadioButton rbTrain;
-        for (Lutemon lutemon : lutemonsTrain) {
-            rbTrain = new RadioButton(this);
-            rbTrain.setText(lutemon.getName());
-            rbTrain.setId(i++);
-            rgLutemonSelectTrain.addView(rbTrain);
-        }
-
-        ArrayList<Lutemon> lutemonsDuel = DuelArena.getInstance().getLutemons();
-        RadioButton rbDuel;
-        for (Lutemon lutemon : lutemonsDuel) {
-            rbDuel = new RadioButton(this);
-            rbDuel.setText(lutemon.getName());
-            rbDuel.setId(i++);
-            rgLutemonSelectDuel.addView(rbDuel);
+        for (Lutemon lutemon : allLutemons) {
+            cbLutemonSelect = new CheckBox(this);
+            cbLutemonSelect.setText(lutemon.getName());
+            cbLutemonSelect.setId(i++);
+            rgLutemonSelectMove.addView(cbLutemonSelect);
         }
     }
-    public void moveLutemon() {
-        Lutemon selectedLutemon;
+    public void moveLutemons(View view) {
+
+        //Adding all lutemons to the same ArrayList (There's no "shared" ArrayList in storage class so this is a way to put every lutemon together)
+        ArrayList<Lutemon> allLutemons = new ArrayList<>();
+        allLutemons.addAll(Home.getInstance().getLutemons());
+        allLutemons.addAll(TrainField.getInstance().getLutemons());
+        allLutemons.addAll(DuelArena.getInstance().getLutemons());
 
 
+        for (int i = 0; i < allLutemons.size(); i++) {
+            CheckBox cbLutemonBox = findViewById(i);
+            System.out.println("i: " + i);
+
+            if (cbLutemonBox.isChecked()) { // Only checked lutemons will be moved/interacted with
+                Lutemon lutemon = allLutemons.get(i);   // Selected lutemon will be removed from every possible location
+                Home.getInstance().getLutemons().remove(lutemon);
+                TrainField.getInstance().getLutemons().remove(lutemon);
+                DuelArena.getInstance().getLutemons().remove(lutemon);
+                System.out.println("Ennen switch");
+                switch (rgLocationSelect.getCheckedRadioButtonId()) { //Selected lutemon will be added to one of three locations.
+                    case R.id.rbHome:
+                        Home.getInstance().getLutemons().add(lutemon);
+                        Home.getInstance().listLutemons();
+                        System.out.println("Homeen juu");
+                        break;
+                    case R.id.rbTrainField:
+                        System.out.println("Trainingii juu");
+                        TrainField.getInstance().getLutemons().add(lutemon);
+                        System.out.println("Trainingii juu 2");
+
+                        break;
+                    case R.id.rbDuelArena:
+                        DuelArena.getInstance().getLutemons().add(lutemon);
+                        DuelArena.getInstance().listLutemons();
+                        break;
+
+                }
+
+            }
+        }
     }
 }
