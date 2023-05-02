@@ -1,3 +1,5 @@
+Huom että katsot työtä "Straightfowrad_activity_impl" -branchissa. (sen kyllä pitäisi olla defaulttina)
+
 Harkkatyö. Pakolliset implementoitu ja lisäksi on implementoitu:
 
 - RecycleViewejä
