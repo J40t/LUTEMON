@@ -18,7 +18,6 @@ public class TrainField extends Storage {
         return trainField;
     }
 
-
     public void increaseExperienceTraining() {
         for (Lutemon lutemon : lutemons) {
             lutemon.incrementExperience();

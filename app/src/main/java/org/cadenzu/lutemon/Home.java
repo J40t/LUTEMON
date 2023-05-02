@@ -5,13 +5,10 @@ import org.cadenzu.lutemon.lutemon.Lutemon;
 import java.util.ArrayList;
 
 public class Home extends Storage {
-
     public static Home home = null;
-
     public Home() {
 
     }
-
 
     public static Home getInstance() {
         if (home == null) {
@@ -19,5 +16,4 @@ public class Home extends Storage {
         }
         return home;
     }
-
 }

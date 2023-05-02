@@ -6,12 +6,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class FightActivity extends AppCompatActivity {
-
     private TextView txtLutemonTitle1, txtLutemonTitle2;
-
     private TextView txtBattleWindow;
-
-    private TextView txtAttackEvent, txtResultEvent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +24,6 @@ public class FightActivity extends AppCompatActivity {
         txtLutemonTitle2.setText(fight.getLutemonDefender().getName());
 
         while (true) {
-
             txtBattleWindow.append(fight.battleDisplayStatsLutemon(fight.getLutemonAttacker()) + "\n");
             txtBattleWindow.append(fight.battleDisplayStatsLutemon(fight.getLutemonDefender()) + "\n");
             txtBattleWindow.append(fight.attackEventMessage() + "\n");
@@ -42,11 +37,6 @@ public class FightActivity extends AppCompatActivity {
                 txtBattleWindow.append(fight.surviveMessage(fight.getLutemonDefender()) + "\n");
                 fight.flipAttackerAndDefender();
             }
-
-
         }
-
-
     }
-
 }

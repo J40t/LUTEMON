@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         Button btnHome = findViewById(R.id.btnHome);
         Button btnTraining = findViewById(R.id.btnTrain);
         Button btnDuel = findViewById(R.id.btnDuel);
@@ -58,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 openMoveLutemonActivity();
             }
         });
-
     }
     public void openMoveLutemonActivity() {
         Intent intent = new Intent(this, MoveLutemonActivity.class);

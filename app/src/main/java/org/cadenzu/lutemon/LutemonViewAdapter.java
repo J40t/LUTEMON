@@ -13,7 +13,6 @@ import org.cadenzu.lutemon.lutemon.Lutemon;
 import java.util.ArrayList;
 
 public class LutemonViewAdapter extends RecyclerView.Adapter<LutemonViewHolder> {
-
     private Context context;
     private ArrayList<Lutemon> lutemons;
 

@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MoveLutemonActivity extends AppCompatActivity {
-
     private RadioGroup rgLutemonSelectMove;
     private RadioGroup rgLocationSelect;
     private Button btnConfirmMove;
@@ -47,7 +46,7 @@ public class MoveLutemonActivity extends AppCompatActivity {
         allLutemons.addAll(TrainField.getInstance().getLutemons());
         allLutemons.addAll(DuelArena.getInstance().getLutemons());
 
-        //Dynamically made CheckBoxes' ID is always 0 ... i
+        //Dynamically made CheckBoxes' ID is always 0 ..... amount of lutemons
         CheckBox cbLutemonSelect;
         int i = 0;
         for (Lutemon lutemon : allLutemons) {
@@ -65,13 +64,12 @@ public class MoveLutemonActivity extends AppCompatActivity {
         allLutemons.addAll(TrainField.getInstance().getLutemons());
         allLutemons.addAll(DuelArena.getInstance().getLutemons());
 
-
         for (int i = 0; i < allLutemons.size(); i++) {
             CheckBox cbLutemonBox = findViewById(i);
             System.out.println("i: " + i);
 
             if (cbLutemonBox.isChecked()) { // Only checked lutemons will be moved/interacted with
-                Lutemon lutemon = allLutemons.get(i);   // Selected lutemon will be removed from every possible location
+                Lutemon lutemon = allLutemons.get(i); // Selected lutemon will be removed from every possible location
                 Home.getInstance().getLutemons().remove(lutemon);
                 TrainField.getInstance().getLutemons().remove(lutemon);
                 DuelArena.getInstance().getLutemons().remove(lutemon);
@@ -85,9 +83,7 @@ public class MoveLutemonActivity extends AppCompatActivity {
                     case R.id.rbDuelArena:
                         DuelArena.getInstance().getLutemons().add(lutemon);
                         break;
-
                 }
-
             }
         }
     }

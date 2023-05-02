@@ -6,7 +6,6 @@ public class Lutemon {
     protected int attack;
     protected int defense;
     protected int exp;
-
     protected int expRoof;
     protected int health;
     protected int maxHealth;
@@ -29,15 +28,6 @@ public class Lutemon {
         this.idCounter = idCounter; // keeps count on how many ids have been created.
     }
 
-    public void attack(int attack) {
-
-    }
-
-    //Defend against the opposing "Lutemon lutemon"
-    public void defense(Lutemon lutemon) {
-
-    }
-
     public void incrementExperience() {
         exp++;
         if (exp >= expRoof) {
@@ -57,14 +47,6 @@ public class Lutemon {
 
     }
 
-
-
-
-
-
-
-
-
     /////////////GETTERS AND SETTERS/////////////
     public String getName() {
         return name;
@@ -78,32 +60,16 @@ public class Lutemon {
         return color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public int getAttack() {
         return attack;
-    }
-
-    public void setAttack(int attack) {
-        this.attack = attack;
     }
 
     public int getDefense() {
         return defense;
     }
 
-    public void setDefense(int defense) {
-        this.defense = defense;
-    }
-
     public int getExp() {
         return exp;
-    }
-
-    public void setExp(int exp) {
-        this.exp = exp;
     }
 
     public int getHealth() {
@@ -118,23 +84,11 @@ public class Lutemon {
         return maxHealth;
     }
 
-    public void setMaxHealth(int maxHealth) {
-        this.maxHealth = maxHealth;
-    }
-
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getIdCounter() {
-        return idCounter;
-    }
-
-    public void setIdCounter(int idCounter) {
-        this.idCounter = idCounter;
     }
 }

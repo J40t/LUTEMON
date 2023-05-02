@@ -10,7 +10,6 @@ import java.util.ArrayList;
 public class Fight {
     private Lutemon lutemonAttacker;
     private Lutemon lutemonDefender;
-
     public Fight() {
         this.lutemonAttacker = DuelArena.getInstance().getLutemons().get(0);
         this.lutemonDefender = DuelArena.getInstance().getLutemons().get(1);
@@ -39,7 +38,6 @@ public class Fight {
         if (damage < 0) { //damage value is negative whenever Attacker's attack stat is higher than the Defender's defense stat.
             lutemonDefender.setHealth(lutemonDefender.getHealth() - (-damage));
         }
-
     }
 
     public String surviveMessage(Lutemon lutemon) {
@@ -58,16 +56,12 @@ public class Fight {
         Lutemon newRoleLutemon = lutemonAttacker;
         lutemonAttacker = lutemonDefender; //Attacker switches to defender
         lutemonDefender = newRoleLutemon; //Defender switches to attacker
-
-        System.out.println("newrole " + newRoleLutemon.getName());
-        System.out.println("lutemondefender " + lutemonDefender.getName());
-        System.out.println("lutemonattacker " + lutemonAttacker.getName());
-
     }
 
     public void fightOver() {
         DuelArena.getInstance().getLutemons().remove(lutemonDefender); //Loser dies
-        lutemonAttacker.incrementExperience(); //Winner gets an experience point
+        lutemonAttacker.incrementExperience(); //Winner gets an experience point and regains maxHealth
+        lutemonAttacker.setHealth(lutemonAttacker.getMaxHealth());
     }
 
     public Lutemon getLutemonAttacker() {
@@ -77,5 +71,4 @@ public class Fight {
     public Lutemon getLutemonDefender() {
         return lutemonDefender;
     }
-
 }

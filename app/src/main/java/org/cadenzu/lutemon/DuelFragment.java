@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 
 public class DuelFragment extends Fragment {
-
     private Button btnDuelBegin;
     private RecyclerView rvLutemons;
     @Override
@@ -38,10 +37,8 @@ public class DuelFragment extends Fragment {
                 }
             }
         });
-
         return view;
     }
-
     public void openFightActivity() {
         Intent intent = new Intent(getActivity(), FightActivity.class);
         startActivity(intent);
