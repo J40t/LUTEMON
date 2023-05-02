@@ -30,7 +30,7 @@ public class DuelFragment extends Fragment {
         btnDuelBegin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (DuelArena.getInstance().getLutemons().size() == DuelArena.getInstance().getLutemonDuelStartCapacity()) {
+                if (DuelArena.getInstance().getLutemons().size() == DuelArena.getInstance().getLutemonDuelStartRequirement()) {
                     openFightActivity();
                 } else {
                     Toast.makeText(getActivity(), "Duel can only start with 2 Lutemons", Toast.LENGTH_LONG).show();

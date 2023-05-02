@@ -23,6 +23,11 @@ public class FightActivity extends AppCompatActivity {
         txtLutemonTitle1.setText(fight.getLutemonAttacker().getName());
         txtLutemonTitle2.setText(fight.getLutemonDefender().getName());
 
+        fightDisplayer(fight);
+
+    }
+
+    public void fightDisplayer(Fight fight) {
         while (true) {
             txtBattleWindow.append(fight.battleDisplayStatsLutemon(fight.getLutemonAttacker()) + "\n");
             txtBattleWindow.append(fight.battleDisplayStatsLutemon(fight.getLutemonDefender()) + "\n");
@@ -38,5 +43,6 @@ public class FightActivity extends AppCompatActivity {
                 fight.flipAttackerAndDefender();
             }
         }
+
     }
 }
