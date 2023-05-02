@@ -36,8 +36,7 @@ public class FightActivity extends AppCompatActivity {
             if (fight.getLutemonDefender().getHealth() <= 0) {
                 txtBattleWindow.append(fight.deathMessage(fight.getLutemonDefender()) + "\n");
                 txtBattleWindow.append("The Battle is Over");
-
-
+                fight.fightOver();
                 break;
             } else {
                 txtBattleWindow.append(fight.surviveMessage(fight.getLutemonDefender()) + "\n");
