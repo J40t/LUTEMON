@@ -8,7 +8,8 @@ import android.widget.TextView;
 public class FightActivity extends AppCompatActivity {
 
     private TextView txtLutemonTitle1, txtLutemonTitle2;
-    private TextView txtStats1, txtStats2;
+
+    private TextView txtBattleWindow;
 
     private TextView txtAttackEvent, txtResultEvent;
 
@@ -21,27 +22,28 @@ public class FightActivity extends AppCompatActivity {
 
         txtLutemonTitle1 = findViewById(R.id.txtLutemonTitle1);
         txtLutemonTitle2 = findViewById(R.id.txtLutemonTitle2);
-        txtStats1 = findViewById(R.id.txtStats1);
-        txtStats2 = findViewById(R.id.txtStats2);
-        txtAttackEvent = findViewById(R.id.txtAttackEvent);
-        txtResultEvent = findViewById(R.id.txtResultEvent);
-
+        txtBattleWindow = findViewById(R.id.txtBattleWindow);
 
         txtLutemonTitle1.setText(fight.getLutemonAttacker().getName());
         txtLutemonTitle2.setText(fight.getLutemonDefender().getName());
 
-
-
-
         while (true) {
 
-            txtStats1.setText(fight.battleDisplayStatsLutemon(fight.getLutemonAttacker()));
-            txtStats2.setText(fight.battleDisplayStatsLutemon(fight.getLutemonDefender()));
-            txtAttackEvent.setText(fight.attackEventMessage());
+            txtBattleWindow.append(fight.battleDisplayStatsLutemon(fight.getLutemonAttacker()) + "\n");
+            txtBattleWindow.append(fight.battleDisplayStatsLutemon(fight.getLutemonDefender()) + "\n");
+            txtBattleWindow.append(fight.attackEventMessage() + "\n");
+            fight.lutemonDefenderHealthCalculation();
             if (fight.getLutemonDefender().getHealth() <= 0) {
+                txtBattleWindow.append(fight.deathMessage(fight.getLutemonDefender()) + "\n");
+                txtBattleWindow.append("The Battle is Over");
 
+
+                break;
+            } else {
+                txtBattleWindow.append(fight.surviveMessage(fight.getLutemonDefender()) + "\n");
+                fight.flipAttackerAndDefender();
             }
-            break;
+
 
         }
 

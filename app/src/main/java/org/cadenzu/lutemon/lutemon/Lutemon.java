@@ -40,7 +40,7 @@ public class Lutemon {
 
     public void incrementExperience() {
         exp++;
-        if (exp > expRoof) {
+        if (exp >= expRoof) {
             incrementStatAttack();
             exp = 0;
         }

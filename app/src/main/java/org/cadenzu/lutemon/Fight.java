@@ -11,17 +11,10 @@ public class Fight {
     private Lutemon lutemonAttacker;
     private Lutemon lutemonDefender;
 
-    private int fightStatus;
-    // 1 = FightActivity displays the lutemons' stats
-    // 2 = FightActivity displays the attack
-    // 3 = FightActivity displays the result of attack (survive or die)
-
     public Fight() {
         this.lutemonAttacker = DuelArena.getInstance().getLutemons().get(0);
         this.lutemonDefender = DuelArena.getInstance().getLutemons().get(1);
     }
-
-
 
     public String battleDisplayStatsLutemon(Lutemon lutemon) {
         String stats = lutemon.getColor()
@@ -34,39 +27,47 @@ public class Fight {
     }
 
     public String attackEventMessage() {
-        String eventMessage = lutemonAttacker.getColor()
+        return lutemonAttacker.getColor()
                 + " (" + lutemonAttacker.getName() + ") "
                 + "attacks "
                 + lutemonDefender.getColor()
                 + " (" + lutemonDefender.getName() + ")";
-
-        return eventMessage;
     }
 
-    public int lutemonDefenderHealthCalculation() {
-        int newHealth = lutemonDefender.getHealth() - (lutemonDefender.getDefense() - lutemonAttacker.getAttack());
-        return newHealth;
+    public void lutemonDefenderHealthCalculation() {
+        int damage = lutemonDefender.getDefense() - lutemonAttacker.getAttack();
+        if (damage < 0) {
+            lutemonDefender.setHealth(lutemonDefender.getHealth() - (-damage));
+        }
+
     }
 
     public String surviveMessage(Lutemon lutemon) {
-        String survMsg = lutemon.getColor()
-                + "(" + lutemon.getName() + ")"
+        return lutemon.getColor()
+                + " (" + lutemon.getName() + ") "
                 + "manages to escape death.";
-        return survMsg;
     }
 
     public String deathMessage(Lutemon lutemon) {
-        String deaMsg = lutemon.getColor()
-                + "(" + lutemon.getName() + ")"
+        return lutemon.getColor()
+                + "(" + lutemon.getName() + ") "
                 + "gets killed.";
-        return deaMsg;
     }
 
     public void flipAttackerAndDefender() {
-        Lutemon newRoleLutemon = lutemonDefender;
-        setLutemonAttacker(newRoleLutemon); //Defender switches to attacker
-        setLutemonDefender(lutemonAttacker); //Attacker switches to defender
+        Lutemon newRoleLutemon = lutemonAttacker;
+        lutemonAttacker = lutemonDefender; //Attacker switches to defender
+        lutemonDefender = newRoleLutemon; //Defender switches to attacker
 
+        System.out.println("newrole " + newRoleLutemon.getName());
+        System.out.println("lutemondefender " + lutemonDefender.getName());
+        System.out.println("lutemonattacker " + lutemonAttacker.getName());
+
+    }
+
+    public void fightOver() {
+        DuelArena.getInstance().getLutemons().remove(lutemonDefender); //Loser dies
+        lutemonAttacker.incrementExperience(); //Winner gets an experience point
     }
 
     public Lutemon getLutemonAttacker() {
@@ -77,19 +78,4 @@ public class Fight {
         return lutemonDefender;
     }
 
-    public void setLutemonAttacker(Lutemon lutemonAttacker) {
-        this.lutemonAttacker = lutemonAttacker;
-    }
-
-    public void setLutemonDefender(Lutemon lutemonDefender) {
-        this.lutemonDefender = lutemonDefender;
-    }
-
-    public int getFightStatus() {
-        return fightStatus;
-    }
-
-    public void setFightStatus(int fightStatus) {
-        this.fightStatus = fightStatus;
-    }
 }

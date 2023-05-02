@@ -1,30 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FightActivity">
+    tools:context=".FightActivity"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/txtLutemonTitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:text="Lutemon1"
-            android:textSize="40dp" />
+            android:textColor="#000000"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:shadowColor="#000000"
             android:text="VS"
+            android:textColor="#000000"
             android:textSize="30dp" />
 
         <TextView
@@ -32,47 +38,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:text="Lutemon2"
-            android:textSize="40dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/txtStats1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="stats1" />
-
-            <TextView
-                android:id="@+id/txtStats2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="stats2" />
-
-            <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/txtAttackEvent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="attackEvent" />
-
-                <TextView
-                    android:id="@+id/txtResultEvent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="resultEvent" />
-            </LinearLayout>
-
-        </LinearLayout>
-
+            android:textColor="#000000"
+            android:textSize="24dp" />
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/txtBattleWindow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        tools:layout_editor_absoluteY="147dp" />
+
+</LinearLayout>
