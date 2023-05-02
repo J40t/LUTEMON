@@ -8,24 +8,24 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/txtLutemonTitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Lutemon1"
-            android:textSize="40dp"
-            android:layout_gravity="center"/>
+            android:textSize="40dp" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="VS"
-            android:textSize="30dp"
-            android:layout_gravity="center"/>
+            android:textSize="30dp" />
 
         <TextView
             android:id="@+id/txtLutemonTitle2"
@@ -34,6 +34,44 @@
             android:layout_gravity="center"
             android:text="Lutemon2"
             android:textSize="40dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtStats1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="stats1" />
+
+            <TextView
+                android:id="@+id/txtStats2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="stats2" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtAttackEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="attackEvent" />
+
+                <TextView
+                    android:id="@+id/txtResultEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="resultEvent" />
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
