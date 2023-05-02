@@ -1,5 +1,6 @@
 package org.cadenzu.lutemon;
 
+import android.content.Intent;
 import android.widget.RadioGroup;
 
 import org.cadenzu.lutemon.lutemon.Lutemon;
@@ -10,28 +11,16 @@ public class Fight {
     private Lutemon lutemonAttacker;
     private Lutemon lutemonDefender;
 
+    private int fightStatus;
+    // 1 = FightActivity displays the lutemons' stats
+    // 2 = FightActivity displays the attack
+    // 3 = FightActivity displays the result of attack (survive or die)
+
     public Fight() {
         this.lutemonAttacker = DuelArena.getInstance().getLutemons().get(0);
         this.lutemonDefender = DuelArena.getInstance().getLutemons().get(1);
     }
 
-    public void fullBattle() {
-
-        while (true) {
-            //Samaan aikaan FightActivityssa:
-            //txtStats1.setText(fight.battleDisplayStatsLutemon(fight.getLutemon1()));
-            //txtStats2.setText(fight.battleDisplayStatsLutemon(fight.getLutemon2()));
-            lutemonDefender.setHealth(lutemonDefenderHealthCalculation());
-
-            if (lutemonDefender.getHealth() <= 0) {
-
-                break;
-            }
-
-
-        }
-
-    }
 
 
     public String battleDisplayStatsLutemon(Lutemon lutemon) {
@@ -59,16 +48,19 @@ public class Fight {
         return newHealth;
     }
 
-
-
     public String surviveMessage(Lutemon lutemon) {
-        String survMessage = lutemon.getColor()
+        String survMsg = lutemon.getColor()
                 + "(" + lutemon.getName() + ")"
                 + "manages to escape death.";
-        return survMessage;
+        return survMsg;
     }
 
-
+    public String deathMessage(Lutemon lutemon) {
+        String deaMsg = lutemon.getColor()
+                + "(" + lutemon.getName() + ")"
+                + "gets killed.";
+        return deaMsg;
+    }
 
     public void flipAttackerAndDefender() {
         Lutemon newRoleLutemon = lutemonDefender;
@@ -91,5 +83,13 @@ public class Fight {
 
     public void setLutemonDefender(Lutemon lutemonDefender) {
         this.lutemonDefender = lutemonDefender;
+    }
+
+    public int getFightStatus() {
+        return fightStatus;
+    }
+
+    public void setFightStatus(int fightStatus) {
+        this.fightStatus = fightStatus;
     }
 }

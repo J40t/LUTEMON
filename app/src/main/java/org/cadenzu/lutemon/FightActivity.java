@@ -26,6 +26,7 @@ public class FightActivity extends AppCompatActivity {
         txtAttackEvent = findViewById(R.id.txtAttackEvent);
         txtResultEvent = findViewById(R.id.txtResultEvent);
 
+
         txtLutemonTitle1.setText(fight.getLutemonAttacker().getName());
         txtLutemonTitle2.setText(fight.getLutemonDefender().getName());
 
@@ -37,6 +38,9 @@ public class FightActivity extends AppCompatActivity {
             txtStats1.setText(fight.battleDisplayStatsLutemon(fight.getLutemonAttacker()));
             txtStats2.setText(fight.battleDisplayStatsLutemon(fight.getLutemonDefender()));
             txtAttackEvent.setText(fight.attackEventMessage());
+            if (fight.getLutemonDefender().getHealth() <= 0) {
+
+            }
             break;
 
         }
