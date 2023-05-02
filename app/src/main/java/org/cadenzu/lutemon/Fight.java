@@ -36,7 +36,7 @@ public class Fight {
 
     public void lutemonDefenderHealthCalculation() {
         int damage = lutemonDefender.getDefense() - lutemonAttacker.getAttack();
-        if (damage < 0) {
+        if (damage < 0) { //damage value is negative whenever Attacker's attack stat is higher than the Defender's defense stat.
             lutemonDefender.setHealth(lutemonDefender.getHealth() - (-damage));
         }
 
