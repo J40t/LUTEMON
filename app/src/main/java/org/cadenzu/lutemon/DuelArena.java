@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class DuelArena extends Storage {
 
+    private final int lutemonDuelStartCapacity = 2;
     public static DuelArena duelArena = null;
 
     public DuelArena() {
@@ -18,4 +19,9 @@ public class DuelArena extends Storage {
         }
         return duelArena;
     }
+
+    public int getLutemonDuelStartCapacity() {
+        return lutemonDuelStartCapacity;
+    }
+
 }

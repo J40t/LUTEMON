@@ -75,22 +75,15 @@ public class MoveLutemonActivity extends AppCompatActivity {
                 Home.getInstance().getLutemons().remove(lutemon);
                 TrainField.getInstance().getLutemons().remove(lutemon);
                 DuelArena.getInstance().getLutemons().remove(lutemon);
-                System.out.println("Ennen switch");
                 switch (rgLocationSelect.getCheckedRadioButtonId()) { //Selected lutemon will be added to one of three locations.
                     case R.id.rbHome:
                         Home.getInstance().getLutemons().add(lutemon);
-                        Home.getInstance().listLutemons();
-                        System.out.println("Homeen juu");
                         break;
                     case R.id.rbTrainField:
-                        System.out.println("Trainingii juu");
                         TrainField.getInstance().getLutemons().add(lutemon);
-                        System.out.println("Trainingii juu 2");
-
                         break;
                     case R.id.rbDuelArena:
                         DuelArena.getInstance().getLutemons().add(lutemon);
-                        DuelArena.getInstance().listLutemons();
                         break;
 
                 }
