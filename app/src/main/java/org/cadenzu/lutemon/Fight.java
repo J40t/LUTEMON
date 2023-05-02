@@ -8,6 +8,25 @@ public class Fight {
     private Lutemon lutemon2;
 
 
+    public Fight(Lutemon lutemon1, Lutemon lutemon2) {
+        this.lutemon1 = lutemon1;
+        this.lutemon2 = lutemon2;
+    }
+
+    public void battle() {
+
+
+    }
+
+    public void displayStatsLutemon(Lutemon lutemon) {
+        String stats = lutemon.getColor()
+                + "(" + lutemon.getName() + ")"
+                + "att: " + lutemon.getAttack() + "; "
+                + "def: " + lutemon.getDefense() + "; "
+                + "exp: " + lutemon.getExp() + "; "
+                + "health: " + lutemon.getHealth() + "/" + lutemon.getMaxHealth();
+    }
+
 
 
     public Lutemon getLutemon1() {

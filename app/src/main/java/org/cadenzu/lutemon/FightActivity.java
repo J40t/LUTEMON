@@ -18,6 +18,9 @@ public class FightActivity extends AppCompatActivity {
         txtLutemonTitle1 = findViewById(R.id.txtLutemonTitle1);
         txtLutemonTitle2 = findViewById(R.id.txtLutemonTitle2);
 
+        txtLutemonTitle1.setText(fight.getLutemon1().getName());
+        txtLutemonTitle2.setText(fight.getLutemon2().getName());
+
     }
 
 }
