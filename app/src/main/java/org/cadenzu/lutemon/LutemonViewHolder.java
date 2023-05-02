@@ -1,6 +1,7 @@
 package org.cadenzu.lutemon;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,8 +12,11 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
     TextView lutemonName, lutemonColor, lutemonExperience, lutemonExperienceInt, lutemonMaxHealth,
             lutemonMaxHealthInt, lutemonAttack, lutemonAttackInt, lutemonDefense, lutemonDefenseInt;
 
+    ImageView lutemonImage;
+
     public LutemonViewHolder(@NonNull View itemView) {
         super(itemView);
+        lutemonImage = itemView.findViewById(R.id.imgLutemonType);
         lutemonName = itemView.findViewById(R.id.txtName);
         lutemonColor = itemView.findViewById(R.id.txtColor);
         lutemonExperience = itemView.findViewById(R.id.txtExp);

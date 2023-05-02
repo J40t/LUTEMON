@@ -3,6 +3,8 @@ package org.cadenzu.lutemon.lutemon;
 public class Lutemon {
     protected String name;
     protected String color;
+
+    protected int image;
     protected int attack;
     protected int defense;
     protected int exp;
@@ -58,6 +60,10 @@ public class Lutemon {
 
     public String getColor() {
         return color;
+    }
+
+    public int getImage() {
+        return image;
     }
 
     public int getAttack() {

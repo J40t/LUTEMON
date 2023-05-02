@@ -31,6 +31,7 @@ public class LutemonViewAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
     public void onBindViewHolder(@NonNull LutemonViewHolder holder, int position) {
         holder.lutemonName.setText(lutemons.get(position).getName());
         holder.lutemonColor.setText(lutemons.get(position).getColor());
+        holder.lutemonImage.setImageResource(lutemons.get(position).getImage());
         holder.lutemonExperienceInt.setText(String.valueOf(lutemons.get(position).getExp()));
         holder.lutemonMaxHealthInt.setText(String.valueOf(lutemons.get(position).getMaxHealth()));
         holder.lutemonAttackInt.setText(String.valueOf(lutemons.get(position).getAttack()));
